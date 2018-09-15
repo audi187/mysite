@@ -1,0 +1,26 @@
+
+<html>
+<head>
+<title>Login form</title>
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'Customer log in/form.css' %}">
+	<body>
+		<div class="loginbox">
+		<img src="avatar.png" class="avatar">	
+		<h1>Enter Account Details</h1>
+		<form>
+			<p>Firm ID</p>
+			<input type="text" name="" placeholder="Enter Firm ID">
+			<p>Username</p>
+			<input type="text" name="" placeholder="Enter Username">
+			<p>Password</p>
+			<input type="password" name="" placeholder="Enter Password">
+			<input type="submit" name="" value="Login">
+			<a href="{% url 'polls:ForgHome' %}">Forgot Password?</a><br>
+			<a href="{% url 'polls:register'%}">Don't have an Account?</a>
+		</form>
+		</div>
+
+	</body>
+</head>
+</html>

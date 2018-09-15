@@ -1,0 +1,92 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+* {
+	margin:0;
+	padding:0;
+	font-family: tahoma,sans-serif;
+	box-sizing: border-box;
+}
+.chatbox,.message-box
+{
+	width: 500px;
+	border: 1px solid black;
+	margin-left: 30%;
+}
+.chatbox
+{
+ height: 230px
+}
+.chatlogs
+{
+	padding: 10px;
+	background: #fbfbfb;
+	height: 100%
+}
+
+
+	</style>
+
+
+</head>
+<body>
+	<h1>Chat Page</h1>
+	<h2>Chat with Z-Bot</h2>
+	<div class="chat">
+<div class="chatbox">
+	<div class="chatlogs">
+		
+		<div class="chat">
+			<p class="client-message" id="client-message"> {{ word }}</p>
+
+		</div>
+
+       <div class="bot-message" id="bot-message"style="float: right;">{{ response }}</div>
+
+
+	</div>
+	
+
+
+
+
+
+
+</div>
+<div class="message-box">
+	<form action="/polls/" method="post">
+
+    {% csrf_token %}
+    <textarea name="name"></textarea>
+    
+    
+    <input type="submit" value="Submit" onclick="addMessageClient()" />
+    <script type="text/javascript">
+    	var messageBot=[];
+    	var messageClient=[];
+
+    	
+    	
+    		messageBot.push({{ response }});
+
+    	
+    	function addMessageClient()
+    	{
+             messageClient.push( {{ word }});
+             
+             document.getElementById("messageClient").innerHTML=messageClient;
+    	}
+    	
+    </script>
+</form>
+</div>
+	</div>
+</body>
+</html>
+
+

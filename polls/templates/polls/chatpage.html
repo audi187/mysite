@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<h1>Chat Page</h1>
+	<h2>Chat with Z-Bot</h2>
+	<form action="submit" method="post">
+		{% csrf_token %}
+    <label for="your_name">Your name: </label>
+<input id="your_name" type="text" name="your_name" maxlength="100" required />
+	</form>
+	<p>{{ info }}</p>
+</body>
+</html>

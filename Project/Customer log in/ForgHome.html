@@ -1,0 +1,45 @@
+<html>
+<head>
+<title>Password Reset</title>
+<link rel="stylesheet" type="text/css" href="ForgForm.css">
+
+	<body>
+	<script>
+document.getElementById('timer').innerHTML =
+  01 + ":" + 10;
+startTimer();
+
+function startTimer() {
+  var presentTime = document.getElementById('timer').innerHTML;
+  var timeArray = presentTime.split(/[:]+/);
+  var m = timeArray[0];
+  var s = checkSecond((timeArray[1] - 1));
+  if(s==59){m=m-1}
+  if(m<0){document.print("Time up")}
+  
+  document.getElementById('timer').innerHTML =
+    m + ":" + s;
+  setTimeout(startTimer, 1000);
+}
+
+function checkSecond(sec) {
+  if (sec < 10 && sec >= 0) {sec = "0" + sec}; // add zero in front of numbers < 10
+  if (sec < 0) {sec = "59"};
+  return sec;
+}
+</script>
+		<div class="loginbox">	
+			<h1>Password Reset</h1>
+				<form>
+					<p>OTP</p>
+					<input type="text" name="" placeholder="Enter OTP sent to (+91)*****-***55">
+					<div class>
+						Time left: <span id="timer"></span>
+                     </div>
+					<input type="submit" name="" value="Submit">
+					<a href="Home.html">Go back</a>
+				</form>
+		</div>
+	</body>
+</head>
+</html>
